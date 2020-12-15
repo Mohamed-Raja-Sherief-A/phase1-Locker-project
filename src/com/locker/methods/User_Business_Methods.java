@@ -82,9 +82,10 @@ public class User_Business_Methods {
 		File file=new File(fileName);
 		List<Credentials> credentials=new ArrayList<Credentials>(); //arrayList for credential storing
 		int i=0;
+		Scanner input = null;
 		try
 		{
-		 Scanner input=new Scanner(file);
+		 input=new Scanner(file);
 		 if(file.length()>0) // checks if file empty
 		 {
 			 while(input.hasNext()) //loops to end of the file
@@ -114,6 +115,7 @@ public class User_Business_Methods {
 		 {
 			throw new FileEmptyException("No data Found"); // custom error thrown
 		 }
+		 input.close();
 		}
 		catch(FileNotFoundException e) // if file not created this catch will be caught
 		{
@@ -121,6 +123,7 @@ public class User_Business_Methods {
 			System.out.println("File not found / No Data entered");
 			System.out.println("---------------------------------------");
 		}
+	
 	}
 	
 	
@@ -186,6 +189,11 @@ public class User_Business_Methods {
 		int i=0;
 		Scanner s=new Scanner(System.in);
 		Scanner input = null;
+		System.out.println("==========================================");
+		System.out.println("*					*");
+		System.out.println("*   WELCOME TO SEARCH PAGE               *");
+		System.out.println("*					*");
+		System.out.println("==========================================");
 		try {
 			input = new Scanner(file);
 			System.out.println("Enter social network name to search (case sensitive):");
@@ -204,6 +212,7 @@ public class User_Business_Methods {
 					System.out.println("--------------------------");
 				}
 			}
+			input.close();
 			if(!found)
 			{
 				
@@ -219,6 +228,7 @@ public class User_Business_Methods {
 		
 		
 		
+		
 	}
 	
 	//delete method to delete file
@@ -226,6 +236,11 @@ public class User_Business_Methods {
 		Scanner s=new Scanner(System.in);
 		String ch;
 		File file=new File(fileName);
+		System.out.println("==========================================");
+		System.out.println("*					*");
+		System.out.println("*   WELCOME TO DELETE PAGE               *");
+		System.out.println("*					*");
+		System.out.println("==========================================");
 		if(file.exists()) //checks if file exist
 		{
 			System.out.println("Entire file will be deleted are you sure (y/n):");
@@ -275,6 +290,11 @@ public class User_Business_Methods {
 		File file=new File(fileName);
 		String socialNetwork,userName,password;
 		Scanner input=new Scanner(System.in);
+		System.out.println("==========================================");
+		System.out.println("*					*");
+		System.out.println("*   WELCOME TO ADD PAGE               *");
+		System.out.println("*					*");
+		System.out.println("==========================================");
 		try
 		{
 			file.createNewFile(); //to create file
